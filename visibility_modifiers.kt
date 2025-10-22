@@ -22,7 +22,7 @@ open class Employee {
 class Manager : Employee() {
     fun showManagerData() {
         println("Name: $name")       // ✅ public — accessible
-        // println("Salary: $salary") // ❌ private — not accessible
+        println("Salary: $salary") // ❌ private — not accessible
         println("Bonus: $bonus")     // ✅ protected — accessible in subclass
         println("Department: $department") // ✅ internal — same module
     }
