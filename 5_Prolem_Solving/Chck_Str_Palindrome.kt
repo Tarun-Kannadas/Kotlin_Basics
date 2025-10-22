@@ -1,7 +1,7 @@
 fun isPalindrome(str: String): Boolean 
 {
 
-    val cleaned = str.filter { it.isLetterOrDigit() }.lowercase()
+    val cleaned = str.replace(Regex("[^A-Za-z0-9]"), "").lowercase()
 
     var left = 0
     var right = cleaned.length - 1
@@ -22,7 +22,7 @@ fun main() {
     val s1 = "sos sos"
     println("Is '$s1' a palindrome? ${isPalindrome(s1)}")
 
-    val s2 = "race a car"
+    val s2 = "sos a car"
     println("Is '$s2' a palindrome? ${isPalindrome(s2)}")
 
     val s3 = "Madam"
