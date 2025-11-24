@@ -12,7 +12,7 @@ open class Employee {
     internal var department: String = "IT"
 
     fun showDetails() {
-        println("Name: $name")          // ✅ allowed
+        println("\nName: $name")          // ✅ allowed
         println("Salary: $salary")      // ✅ allowed
         println("Bonus: $bonus")        // ✅ allowed
         println("Department: $department") // ✅ allowed
@@ -21,8 +21,8 @@ open class Employee {
 
 class Manager : Employee() {
     fun showManagerData() {
-        println("Name: $name")       // ✅ public — accessible
-        println("Salary: $salary") // ❌ private — not accessible
+        println("\nName: $name")       // ✅ public — accessible
+        println("Salary: private - not accessible") // ❌ private — not accessible
         println("Bonus: $bonus")     // ✅ protected — accessible in subclass
         println("Department: $department") // ✅ internal — same module
     }
@@ -30,8 +30,9 @@ class Manager : Employee() {
 
 fun main() {
     val emp = Employee()
-    emp.showDetails()           // ✅ allowed (public function)
-    println(emp.name)           // ✅ public
+    emp.showDetails()        // ✅ allowed (public function)
+    
+    println("\n${emp.name}")           // ✅ public
     // println(emp.salary)      // ❌ private — cannot access outside
     // println(emp.bonus)       // ❌ protected — cannot access outside
     println(emp.department)     // ✅ internal — same module
