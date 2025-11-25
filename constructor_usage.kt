@@ -1,4 +1,4 @@
-class Person(val name: String) 
+class Person(var name: String) 
 {
    	var age = 0
     
@@ -9,7 +9,7 @@ class Person(val name: String)
     constructor(name:String,age:Int):this(name)
     {
         this.age = age
-        println("Age: $age")
+        println("Username: $name | Age: $age")
     }
 }
 
